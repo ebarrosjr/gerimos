@@ -2,7 +2,7 @@
 
 use CodeIgniter\Database\Migration;
 
-class Users extends Migration
+class Properties extends Migration
 {
 	public function up()
 	{
@@ -13,33 +13,33 @@ class Users extends Migration
 				'unsigned' => true,
 				'auto_increment' => true,
 			],
-			'cpf' => [
+			'codigo' => [
 				'type' => 'VARCHAR',
-				'constraint' => '13',
-				'null' => false,
+				'constraint' => '45',
+				'null' => true,
 			],
-			'nome' => [
+			'titulo' => [
 				'type' => 'VARCHAR',
 				'constraint' => '120',
 				'null' => false,
 			],
-			'password' => [
-				'type' => 'VARCHAR',
-				'constraint' => '150',
+			'descricao' => [
+				'type' => 'TEXT',
 				'null' => true,
 			],
-			'last_login' => [
+			'created' => [
 				'type' => 'TIMESTAMP',
 				'null' => true,
 			],
 		]);
 		$this->forge->addKey('id', true);
-		$this->forge->addUniqueKey('cpf', true);
-		$this->forge->createTable('users');
+		$this->forge->createTable('properties');
 	}
+
+	//--------------------------------------------------------------------
 
 	public function down()
 	{
-		$this->forge->dropTable('users');	
+		$this->forge->dropTable('properties');	
 	}
 }
