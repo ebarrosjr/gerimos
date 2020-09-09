@@ -41,6 +41,11 @@
                         </p>
                     </div>
                     <div class="field">
+                        <label class="checkbox">
+                            <input type="checkbox"> Manter logado
+                        </label>                    
+                    </div>
+                    <div class="field">
                         <button type="submit" class="button is-fullwidth is-info"> Acessar </button>
                     </div>
                 </div>
