@@ -49,11 +49,13 @@ app.baseURL = 'http://sistema.gerimos.test'
 # DATABASE
 #--------------------------------------------------------------------
 
-# database.default.hostname = localhost
-# database.default.database = ci4
-# database.default.username = root
-# database.default.password = root
-# database.default.DBDriver = MySQLi
+database.default.hostname = localhost
+database.default.DBDriver = Postgre
+database.default.port = 5432
+database.default.database = gerimos
+database.default.schema = public
+database.default.username = gerimos
+database.default.password = uaarae11
 
 # database.tests.hostname = localhost
 # database.tests.database = ci4
