@@ -1,6 +1,6 @@
 <?php
 
-use Tests\Support\Models\ExampleModel;
+use \Tests\Support\Models\ExampleModel;
 
 class ExampleDatabaseTest extends \Tests\Support\DatabaseTestCase
 {
