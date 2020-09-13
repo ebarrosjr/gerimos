@@ -23,12 +23,25 @@ class Users extends Migration
 				'constraint' => '120',
 				'null' => false,
 			],
+			'email' => [
+				'type' => 'VARCHAR',
+				'constraint' => '120',
+				'null' => false,
+			],
 			'password' => [
 				'type' => 'VARCHAR',
 				'constraint' => '150',
 				'null' => true,
 			],
 			'last_login' => [
+				'type' => 'TIMESTAMP',
+				'null' => true,
+			],
+			'created_at' => [
+				'type' => 'TIMESTAMP',
+				'null' => true,
+			],
+			'updated_at' => [
 				'type' => 'TIMESTAMP',
 				'null' => true,
 			],

@@ -30,7 +30,12 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
+$routes->match(['get', 'post'], '/login', 'UsersController::login');
+$routes->get('/logout', 'UsersController::logout');
+$routes->group('somente_logado', ['filter' => 'auth'], function($routes){
+	$routes->get('/', 'Home::index');
+	$routes->match(['get', 'post'], '/users/new', 'UsersController::new');
+});
 
 /**
  * --------------------------------------------------------------------

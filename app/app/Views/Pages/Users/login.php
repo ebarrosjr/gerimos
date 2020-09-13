@@ -20,34 +20,54 @@
                 <div class="media">
                     <div class="is-size-4 has-text-centered">Login</div>
                 </div>
+                <?php
+                if(isset($validation)) {
+                ?>
+                <div class="notification is-danger">
+                    <button class="delete"></button>
+                    <?=$validation->listErrors()?>
+                </div>
+                <?php
+                }
+                if(session()->get('error')!='') {
+                ?>
+                <div class="notification is-danger">
+                    <button class="delete"></button>
+                    <?=session()->get('error')?>
+                </div>
+                <?php
+                }
+                ?>                
                 <div class="content">
-                <div class="field">
-                        <p class="control has-icons-left">
-                            <input type="text" class="input" placeholder="Seu CPF">
-                            <span class="icon is-small is-left">
-                                <i class="fa fa-user-circle"></i>
-                            </span>
-                        </p>
-                    </div>
-                    <div class="field">
-                        <p class="control has-icons-left has-icons-right">
-                            <input type="text" class="input" placeholder="Sua senha">
-                            <span class="icon is-small is-left">
-                                <i class="fas fa-lock"></i>
-                            </span>
-                            <span class="icon is-small is-right">
-                                <i class="fas fa-eye"></i>
-                            </span>
-                        </p>
-                    </div>
-                    <div class="field">
-                        <label class="checkbox">
-                            <input type="checkbox"> Manter logado
-                        </label>                    
-                    </div>
-                    <div class="field">
-                        <button type="submit" class="button is-fullwidth is-info"> Acessar </button>
-                    </div>
+                    <form action="/login" method="post">
+                        <div class="field">
+                            <p class="control has-icons-left">
+                                <input type="text" name="cpf" class="input" placeholder="Seu CPF" value="<?= set_value('cpf') ?>">
+                                <span class="icon is-small is-left">
+                                    <i class="fa fa-user-circle"></i>
+                                </span>
+                            </p>
+                        </div>
+                        <div class="field">
+                            <p class="control has-icons-left has-icons-right">
+                                <input type="password" name="password" class="input" placeholder="Sua senha">
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-lock"></i>
+                                </span>
+                                <span class="icon is-small is-right">
+                                    <i class="fas fa-eye"></i>
+                                </span>
+                            </p>
+                        </div>
+                        <div class="field">
+                            <label class="checkbox">
+                                <input type="checkbox"> Manter logado
+                            </label>                    
+                        </div>
+                        <div class="field">
+                            <button type="submit" class="button is-fullwidth is-info"> Acessar </button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

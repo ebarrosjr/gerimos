@@ -4,6 +4,10 @@ class Home extends BaseController
 {
 	public function index()
 	{
-		return view('Pages/Users/login');
+		if(session()->get('success')){
+			echo session()->get('success');
+		}else{
+			echo '<h1>Principal</h1>';
+		}
 	}
 }
