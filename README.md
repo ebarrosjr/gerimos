@@ -13,7 +13,9 @@ Um software **completo** de gerenciamento de atividades de uma imobiliária, com
 ---
 #### Sistema
 
-- [ ] **Cadastro de imobiliária**
+- [ ] **Acesso ao sistema**
+- [x]   Login
+- [x]   LogOut
 - [ ] **Cadastro de corretores**
 - [ ] 	Níveis
 - [ ] **Cadastro de proprietários**
