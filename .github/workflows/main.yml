@@ -1,13 +1,13 @@
-name: PHPUnit
+name: Testes unitários
 
 on:
-  pull_request:
+  push:
     branches: 
       - develop
 
 jobs:
   main:
-    name: Build and test
+    name: test with PHPUnit
 
     strategy:
       matrix:
